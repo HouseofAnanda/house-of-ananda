@@ -3,49 +3,151 @@
 <head>
   <title>House of Ananda</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #faf7f5;
+      color: #2c2c2c;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to bottom, #f8e8e4, #faf7f5);
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #666;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .image {
+      height: 250px;
+      background: #eee;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-weight: 600;
+      margin: 10px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 30px;
+      background-color: #c97b63;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #a85f4a;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      color: #777;
+      font-size: 14px;
+    }
+
+  </style>
 </head>
 
-<body style="font-family: sans-serif; text-align: center; padding: 20px;">
+<body>
 
-  <h1>House of Ananda</h1>
-  <p>Timeless sarees, woven with grace ✨</p>
-
-  <hr>
-
-  <h2>Our Sarees</h2>
-
-  <div>
-    <h3>Ivory Silk Elegance</h3>
-    <p>₹4,999</p>
-    <a href="https://wa.me/919633789718?text=Hi%20I%20want%20Ivory%20Silk%20Elegance">
-      <button>Order on WhatsApp</button>
-    </a>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>House of Ananda</h1>
+    <p>Timeless sarees, woven with grace ✨</p>
   </div>
 
-  <br>
+  <!-- PRODUCTS -->
+  <div class="container">
+    <h2 style="text-align:center;">Our Sarees</h2>
 
-  <div>
-    <h3>Pastel Cotton Breeze</h3>
-    <p>₹2,499</p>
-    <a href="https://wa.me/919633789718?text=Hi%20I%20want%20Pastel%20Cotton%20Breeze">
-      <button>Order on WhatsApp</button>
-    </a>
+    <div class="products">
+
+      <div class="card">
+        <div class="image"></div>
+        <h3>Ivory Silk Elegance</h3>
+        <p class="price">₹4,999</p>
+        <a class="btn" href="https://wa.me/919633789718?text=Hi%20I%20want%20Ivory%20Silk%20Elegance">
+          Order on WhatsApp
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="image"></div>
+        <h3>Pastel Cotton Breeze</h3>
+        <p class="price">₹2,499</p>
+        <a class="btn" href="https://wa.me/919633789718?text=Hi%20I%20want%20Pastel%20Cotton%20Breeze">
+          Order on WhatsApp
+        </a>
+      </div>
+
+      <div class="card">
+        <div class="image"></div>
+        <h3>Festive Red Zari</h3>
+        <p class="price">₹5,999</p>
+        <a class="btn" href="https://wa.me/919633789718?text=Hi%20I%20want%20Festive%20Red%20Zari">
+          Order on WhatsApp
+        </a>
+      </div>
+
+    </div>
   </div>
 
-  <br>
-
-  <div>
-    <h3>Festive Red Zari</h3>
-    <p>₹5,999</p>
-    <a href="https://wa.me/919633789718?text=Hi%20I%20want%20Festive%20Red%20Zari">
-      <button>Order on WhatsApp</button>
-    </a>
+  <!-- FOOTER -->
+  <div class="footer">
+    📦 Ships in 3–5 days <br>
+    💬 WhatsApp for orders & queries
   </div>
-
-  <hr>
-
-  <p>📦 Ships in 3–5 days</p>
-  <p>💬 WhatsApp for orders & queries</p>
 
 </body>
 </html>
