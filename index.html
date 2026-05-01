@@ -181,16 +181,37 @@
       <div class="card">
 
   <!-- Main Image -->
-  <img id="img1" 
+<img id="img1" 
   src="https://i.ibb.co/mVFRRMPH/IMG-4703.jpg" 
   class="image" 
-  onclick="openPopup(this.src, ['IMAGE1','IMAGE2','IMAGE3'])">
+  onclick="openPopup(this.src, [
+    'https://i.ibb.co/mVFRRMPH/IMG-4703.jpg',
+    'https://i.ibb.co/NdWKzZxp/IMG-4704.jpg',
+    'https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg'
+  ])">
 
   <!-- Thumbnails -->
   <div class="thumbs">
-    <img src="https://i.ibb.co/mVFRRMPH/IMG-4703.jpg" onclick="changeImage('img1', this.src); openPopup(this.src, ['IMAGE1','IMAGE2','IMAGE3'])">
-    <img src="https://i.ibb.co/NdWKzZxp/IMG-4704.jpg" onclick="changeImage('img1', this.src); openPopup(this.src, ['IMAGE1','IMAGE2','IMAGE3'])">
-    <img src="https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg" onclick="changeImage('img1', this.src); openPopup(this.src, ['IMAGE1','IMAGE2','IMAGE3'])">
+    <img src="https://i.ibb.co/mVFRRMPH/IMG-4703.jpg"
+  onclick="changeImage('img1', this.src); openPopup(this.src, [
+    'https://i.ibb.co/mVFRRMPH/IMG-4703.jpg',
+    'https://i.ibb.co/NdWKzZxp/IMG-4704.jpg',
+    'https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg'
+  ])">
+
+<img src="https://i.ibb.co/NdWKzZxp/IMG-4704.jpg"
+  onclick="changeImage('img1', this.src); openPopup(this.src, [
+    'https://i.ibb.co/mVFRRMPH/IMG-4703.jpg',
+    'https://i.ibb.co/NdWKzZxp/IMG-4704.jpg',
+    'https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg'
+  ])">
+
+<img src="https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg"
+  onclick="changeImage('img1', this.src); openPopup(this.src, [
+    'https://i.ibb.co/mVFRRMPH/IMG-4703.jpg',
+    'https://i.ibb.co/NdWKzZxp/IMG-4704.jpg',
+    'https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg'
+  ])">
    </div>
 
   <h3>Royal Blue Elegance</h3>
