@@ -134,6 +134,32 @@
   max-height: 90%;
   border-radius: 12px;
 }
+    .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  user-select: none;
+}
+
+.left {
+  left: 20px;
+}
+
+.right {
+  right: 20px;
+}
 
   </style>
 </head>
@@ -200,7 +226,13 @@
     💬 WhatsApp for orders & queries
   </div>
 <script>
-  function openPopup(src) {
+let currentImages = [];
+let currentIndex = 0;
+
+function openPopup(src, images) {
+  currentImages = images;
+  currentIndex = images.indexOf(src);
+
   document.getElementById("popup").style.display = "flex";
   document.getElementById("popupImg").src = src;
 }
@@ -208,13 +240,24 @@
 function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
-  
-function changeImage(id, src) {
-  document.getElementById(id).src = src;
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  document.getElementById("popupImg").src = currentImages[currentIndex];
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  document.getElementById("popupImg").src = currentImages[currentIndex];
 }
 </script>
-<div id="popup" class="popup" onclick="closePopup()">
+<div id="popup" class="popup">
+  <span class="close" onclick="closePopup()">×</span>
+  <span class="nav left" onclick="prevImage()">❮</span>
+  
   <img id="popupImg">
-</div>  
+
+  <span class="nav right" onclick="nextImage()">❯</span>
+</div>
 </body>
 </html>
