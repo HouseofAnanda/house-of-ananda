@@ -96,6 +96,26 @@
       font-size: 14px;
     }
 
+    .thumbs {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.thumbs img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.thumbs img:hover {
+  opacity: 1;
+}
+
   </style>
 </head>
 
@@ -114,13 +134,25 @@
     <div class="products">
 
       <div class="card">
-        <div class="image"></div>
-        <h3>Ivory Silk Elegance</h3>
-        <p class="price">₹4,999</p>
-        <a class="btn" href="https://wa.me/919633789718?text=Hi%20I%20want%20Ivory%20Silk%20Elegance">
-          Order on WhatsApp
-        </a>
-      </div>
+
+  <!-- Main Image -->
+  <img id="img1" src="IMAGE1" class="image">
+
+  <!-- Thumbnails -->
+  <div class="thumbs">
+    <img src="IMAGE1" onclick="changeImage('img1', this.src)">
+    <img src="IMAGE2" onclick="changeImage('img1', this.src)">
+    <img src="IMAGE3" onclick="changeImage('img1', this.src)">
+  </div>
+
+  <h3>Ivory Silk Elegance</h3>
+  <p class="price">₹4,999</p>
+
+  <a class="btn" href="https://wa.me/919633789718?text=Hi%20I%20want%20Ivory%20Silk%20Elegance">
+    Order on WhatsApp
+  </a>
+
+</div>
 
       <div class="card">
         <div class="image"></div>
@@ -148,6 +180,10 @@
     📦 Ships in 3–5 days <br>
     💬 WhatsApp for orders & queries
   </div>
-
+<script>
+function changeImage(id, src) {
+  document.getElementById(id).src = src;
+}
+</script>
 </body>
 </html>
