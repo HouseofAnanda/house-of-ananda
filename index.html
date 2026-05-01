@@ -115,6 +115,25 @@
 .thumbs img:hover {
   opacity: 1;
 }
+    
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
 
   </style>
 </head>
@@ -136,13 +155,13 @@
       <div class="card">
 
   <!-- Main Image -->
-  <img id="img1" src="https://i.ibb.co/mVFRRMPH/IMG-4703.jpg" class="image">
+  <img id="img1" src="https://i.ibb.co/mVFRRMPH/IMG-4703.jpg" class="image" onclick="openPopup(this.src)">
 
   <!-- Thumbnails -->
   <div class="thumbs">
-    <img src="https://i.ibb.co/mVFRRMPH/IMG-4703.jpg" onclick="changeImage('img1', this.src)">
-    <img src="https://i.ibb.co/NdWKzZxp/IMG-4704.jpg" onclick="changeImage('img1', this.src)">
-    <img src="https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg" onclick="changeImage('img1', this.src)">
+    <img src="https://i.ibb.co/mVFRRMPH/IMG-4703.jpg" onclick="changeImage('img1', this.src); openPopup(this.src)">
+    <img src="https://i.ibb.co/NdWKzZxp/IMG-4704.jpg" onclick="changeImage('img1', this.src); openPopup(this.src)">
+    <img src="https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg" onclick="changeImage('img1', this.src); openPopup(this.src)">
   </div>
 
   <h3>Royal Blue Elegance</h3>
@@ -181,9 +200,21 @@
     💬 WhatsApp for orders & queries
   </div>
 <script>
+  function openPopup(src) {
+  document.getElementById("popup").style.display = "flex";
+  document.getElementById("popupImg").src = src;
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+  
 function changeImage(id, src) {
   document.getElementById(id).src = src;
 }
 </script>
+<div id="popup" class="popup" onclick="closePopup()">
+  <img id="popupImg">
+</div>  
 </body>
 </html>
