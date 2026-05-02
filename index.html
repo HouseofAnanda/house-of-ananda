@@ -164,6 +164,31 @@
   right: 20px;
 }
 
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links span {
+  margin: 0 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.footer-links span:hover {
+  color: #c97b63;
+}
+
+.policy-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+  text-align: left;
+}
+
   </style>
 </head>
 
@@ -249,9 +274,14 @@
 
   <!-- FOOTER -->
   <div class="footer">
-    📦 Ships in 3–5 days <br>
-    💬 WhatsApp for orders & queries
+  <p>© 2026 House of Ananda</p>
+
+  <div class="footer-links">
+    <span onclick="openPolicy('tnc')">Terms & Conditions</span>
+    <span onclick="openPolicy('returns')">Return Policy</span>
+    <span onclick="openPolicy('shipping')">Shipping</span>
   </div>
+</div>
 <script>
 let currentImages = [];
 let currentIndex = 0;
@@ -277,6 +307,42 @@ function prevImage() {
   currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
   document.getElementById("popupImg").src = currentImages[currentIndex];
 }
+
+function openPolicy(type) {
+  let content = "";
+
+  if (type === "tnc") {
+    content = `
+      <h2>Terms & Conditions</h2>
+      <p>By placing an order with House of Ananda, you agree to provide accurate details for order processing and delivery.</p>
+      <p>We reserve the right to cancel orders if necessary.</p>
+    `;
+  }
+
+  if (type === "returns") {
+    content = `
+      <h2>Return Policy</h2>
+      <p>Returns are accepted only for damaged or incorrect products.</p>
+      <p>Please contact us within 48 hours with an unboxing video.</p>
+      <p>No returns for color variation or personal preference.</p>
+    `;
+  }
+
+  if (type === "shipping") {
+    content = `
+      <h2>Shipping</h2>
+      <p>Orders are processed within 1–2 days.</p>
+      <p>Delivery takes 3–5 working days depending on location.</p>
+    `;
+  }
+
+  document.getElementById("policyText").innerHTML = content;
+  document.getElementById("policyPopup").style.display = "flex";
+}
+
+function closePolicy() {
+  document.getElementById("policyPopup").style.display = "none";
+}
 </script>
 <div id="popup" class="popup">
   <span class="close" onclick="closePopup()">×</span>
@@ -285,6 +351,12 @@ function prevImage() {
   <img id="popupImg">
 
   <span class="nav right" onclick="nextImage()">❯</span>
+</div>
+  <div id="policyPopup" class="popup" onclick="closePolicy()">
+  <div class="policy-content" onclick="event.stopPropagation()">
+    <span class="close" onclick="closePolicy()">×</span>
+    <div id="policyText"></div>
+  </div>
 </div>
 </body>
 </html>
