@@ -4,250 +4,35 @@
   <title>House of Ananda</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    body {
+
+body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background-color: #faf7f5;
   color: #2c2c2c;
 }
 
-/* Typography */
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
-  letter-spacing: 0.5px;
 }
 
-h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-/* Layout */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 30px 20px;
 }
 
-/* HEADER (clean & premium) */
-.header {
-  background: #ffffff;
-  text-align: center;
-  padding: 18px 10px;
-  border-bottom: 1px solid #eee;
-}
-
-.logo {
-  width: 170px;
-  max-width: 75%;
-  height: auto;
-}
-
-/* HERO (fixed spacing issue) */
-.hero {
-  text-align: center;
-  padding: 30px 20px 10px;
-  background: #faf7f5;
-}
-
-.tagline {
-  font-size: 15px;
-  color: #8a8a8a;
-  font-style: italic;
-  letter-spacing: 0.5px;
-}
-
-/* PRODUCTS GRID */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
-
-/* CARD (more luxury feel) */
-.card {
-  background: white;
-  border-radius: 18px;
-  padding: 18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  text-align: center;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-}
-
-/* IMAGE */
-.image {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 14px;
-  margin-bottom: 12px;
-}
-
-/* THUMBNAILS */
-.thumbs {
-  display: flex;
-  gap: 8px;
-  margin-top: 8px;
-  justify-content: center;
-}
-
-.thumbs img {
-  width: 55px;
-  height: 55px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  opacity: 0.7;
-  transition: 0.2s;
-}
-
-.thumbs img:hover {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-/* PRICE */
-.price {
-  font-weight: 600;
-  margin: 8px 0;
-  font-size: 16px;
-}
-
-/* BUTTON */
-.btn {
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 30px;
-  background-color: #c97b63;
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  margin-top: 10px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background-color: #a85f4a;
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  margin-top: 60px;
-  padding: 25px 20px;
-  color: #777;
-  font-size: 14px;
-  border-top: 1px solid #eee;
-}
-
-.footer-links {
-  margin-top: 12px;
-}
-
-.footer-links span {
-  margin: 0 12px;
-  cursor: pointer;
-  text-decoration: underline;
-  font-size: 13px;
-}
-
-.footer-links span:hover {
-  color: #c97b63;
-}
-
-/* POPUP */
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.85);
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-.popup img {
-  max-width: 90%;
-  max-height: 85%;
-  border-radius: 12px;
-}
-
-/* CLOSE BUTTON */
-.close {
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-}
-
-/* NAV ARROWS (FIXED FOR MOBILE) */
-.nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 26px;
-  color: white;
-  cursor: pointer;
-  padding: 12px;
-  background: rgba(0,0,0,0.5);
-  border-radius: 50%;
-}
-
-.left {
-  left: 10px;
-}
-
-.right {
-  right: 10px;
-}
-
-/* POLICY POPUP */
-.policy-content {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 500px;
-  width: 90%;
-  max-height: 80%;
-  overflow-y: auto;
-  text-align: left;
-}
-
-/* MOBILE FIXES */
-@media (max-width: 600px) {
-  .logo {
-    width: 140px;
-  }
-
-  .image {
-    height: 220px;
-  }
-
-  .nav {
-    font-size: 22px;
-    padding: 10px;
-  }
-
-  .hero-premium {
+/* 🔥 PREMIUM HERO (FIXED) */
+.hero-premium {
   height: 60vh;
   min-height: 420px;
-  background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
               url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1400') center/cover no-repeat;
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -266,113 +51,210 @@ h2 {
   font-size: 18px;
   letter-spacing: 1px;
 }
+
+/* PRODUCTS */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
 }
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+
+.thumbs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.thumbs img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.thumbs img:hover {
+  opacity: 1;
+}
+
+.price {
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 30px;
+  background-color: #c97b63;
+  color: white;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #a85f4a;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 25px;
+  border-top: 1px solid #eee;
+}
+
+.footer-links span {
+  margin: 0 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* POPUP */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup img {
+  max-width: 90%;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.left { left: 20px; }
+.right { right: 20px; }
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.policy-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+}
+
+@media (max-width: 600px) {
+  .hero-premium {
+    height: 50vh;
+  }
+
+  .logo-hero {
+    width: 150px;
+  }
+}
+
   </style>
 </head>
 
 <body>
 
-<!-- PREMIUM HERO -->
+<!-- 🔥 HERO -->
 <div class="hero-premium">
-
   <img src="YOUR-LOGO-LINK" class="logo-hero">
-
-  <p class="tagline">
-    Where tradition meets quiet luxury ✨
-  </p>
-
-</div>
-  
-  <!-- PRODUCTS -->
-  <div class="container">
-    <h2 style="text-align:center;">Our Sarees</h2>
-
-    <div class="products">
-
-      <div class="card">
-
-  <!-- Main Image -->
-<img id="img1" 
-  src="https://i.ibb.co/mVFRRMPH/IMG-4703.jpg" 
-  class="image" 
-  onclick="openPopup(this.src, [
-    'https://i.ibb.co/mVFRRMPH/IMG-4703.jpg',
-    'https://i.ibb.co/NdWKzZxp/IMG-4704.jpg',
-    'https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg'
-  ])">
-
-  <!-- Thumbnails -->
-  <div class="thumbs">
-    <img src="https://i.ibb.co/mVFRRMPH/IMG-4703.jpg"
-  onclick="changeImage('img1', this.src); openPopup(this.src, [
-    'https://i.ibb.co/mVFRRMPH/IMG-4703.jpg',
-    'https://i.ibb.co/NdWKzZxp/IMG-4704.jpg',
-    'https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg'
-  ])">
-
-<img src="https://i.ibb.co/NdWKzZxp/IMG-4704.jpg"
-  onclick="changeImage('img1', this.src); openPopup(this.src, [
-    'https://i.ibb.co/mVFRRMPH/IMG-4703.jpg',
-    'https://i.ibb.co/NdWKzZxp/IMG-4704.jpg',
-    'https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg'
-  ])">
-
-<img src="https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg"
-  onclick="changeImage('img1', this.src); openPopup(this.src, [
-    'https://i.ibb.co/mVFRRMPH/IMG-4703.jpg',
-    'https://i.ibb.co/NdWKzZxp/IMG-4704.jpg',
-    'https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg'
-  ])">
-   </div>
-
-  <h3>Royal Blue Elegance</h3>
-  <p class="price">₹4,999</p>
-
-  <a class="btn" href="https://wa.me/919633789718?text=Hi%20I%20want%20Royal%20Blue%20Elegance">
-    Order on WhatsApp
-  </a>
-
+  <p class="tagline">Where tradition meets quiet luxury ✨</p>
 </div>
 
-      <div class="card">
-        <div class="image"></div>
-        <h3>Pastel Cotton Breeze</h3>
-        <p class="price">₹2,499</p>
-        <a class="btn" href="https://wa.me/919633789718?text=Hi%20I%20want%20Pastel%20Cotton%20Breeze">
-          Order on WhatsApp
-        </a>
+<!-- PRODUCTS -->
+<div class="container">
+  <h2 style="text-align:center;">Our Sarees</h2>
+
+  <div class="products">
+
+    <div class="card">
+
+      <img id="img1" 
+      src="https://i.ibb.co/mVFRRMPH/IMG-4703.jpg" 
+      class="image"
+      onclick="openPopup(this.src, images1)">
+
+      <div class="thumbs">
+        <img src="https://i.ibb.co/mVFRRMPH/IMG-4703.jpg" onclick="changeImage('img1', this.src)">
+        <img src="https://i.ibb.co/NdWKzZxp/IMG-4704.jpg" onclick="changeImage('img1', this.src)">
+        <img src="https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg" onclick="changeImage('img1', this.src)">
       </div>
 
-      <div class="card">
-        <div class="image"></div>
-        <h3>Festive Red Zari</h3>
-        <p class="price">₹5,999</p>
-        <a class="btn" href="https://wa.me/919633789718?text=Hi%20I%20want%20Festive%20Red%20Zari">
-          Order on WhatsApp
-        </a>
-      </div>
+      <h3>Royal Blue Elegance</h3>
+      <p class="price">₹4,999</p>
+
+      <a class="btn" href="https://wa.me/919633789718?text=Hi%20I%20want%20Royal%20Blue%20Elegance">
+        Order on WhatsApp
+      </a>
 
     </div>
-  </div>
 
-  <!-- FOOTER -->
-  <div class="footer">
-  <p>© 2026 House of Ananda</p>
-
-  <div class="footer-links">
-    <span onclick="openPolicy('tnc')">Terms & Conditions</span>
-    <span onclick="openPolicy('returns')">Return Policy</span>
-    <span onclick="openPolicy('shipping')">Shipping</span>
   </div>
 </div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>© 2026 House of Ananda</p>
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+  <span class="close" onclick="closePopup()">×</span>
+  <span class="nav left" onclick="prevImage()">❮</span>
+  <img id="popupImg">
+  <span class="nav right" onclick="nextImage()">❯</span>
+</div>
+
 <script>
+
+let images1 = [
+  "https://i.ibb.co/mVFRRMPH/IMG-4703.jpg",
+  "https://i.ibb.co/NdWKzZxp/IMG-4704.jpg",
+  "https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg"
+];
+
 let currentImages = [];
 let currentIndex = 0;
 
 function openPopup(src, images) {
   currentImages = images;
   currentIndex = images.indexOf(src);
-
   document.getElementById("popup").style.display = "flex";
   document.getElementById("popupImg").src = src;
 }
@@ -391,55 +273,11 @@ function prevImage() {
   document.getElementById("popupImg").src = currentImages[currentIndex];
 }
 
-function openPolicy(type) {
-  let content = "";
-
-  if (type === "tnc") {
-    content = `
-      <h2>Terms & Conditions</h2>
-      <p>By placing an order with House of Ananda, you agree to provide accurate details for order processing and delivery.</p>
-      <p>We reserve the right to cancel orders if necessary.</p>
-    `;
-  }
-
-  if (type === "returns") {
-    content = `
-      <h2>Return Policy</h2>
-      <p>Returns are accepted only for damaged or incorrect products.</p>
-      <p>Please contact us within 48 hours with an unboxing video.</p>
-      <p>No returns for color variation or personal preference.</p>
-    `;
-  }
-
-  if (type === "shipping") {
-    content = `
-      <h2>Shipping</h2>
-      <p>Orders are processed within 1–2 days.</p>
-      <p>Delivery takes 3–5 working days depending on location.</p>
-    `;
-  }
-
-  document.getElementById("policyText").innerHTML = content;
-  document.getElementById("policyPopup").style.display = "flex";
+function changeImage(id, src) {
+  document.getElementById(id).src = src;
 }
 
-function closePolicy() {
-  document.getElementById("policyPopup").style.display = "none";
-}
 </script>
-<div id="popup" class="popup">
-  <span class="close" onclick="closePopup()">×</span>
-  <span class="nav left" onclick="prevImage()">❮</span>
-  
-  <img id="popupImg">
 
-  <span class="nav right" onclick="nextImage()">❯</span>
-</div>
-  <div id="policyPopup" class="popup" onclick="closePolicy()">
-  <div class="policy-content" onclick="event.stopPropagation()">
-    <span class="close" onclick="closePolicy()">×</span>
-    <div id="policyText"></div>
-  </div>
-</div>
 </body>
 </html>
