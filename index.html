@@ -9,113 +9,162 @@
 
   <style>
     body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #faf7f5;
-      color: #2c2c2c;
-    }
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #faf7f5;
+  color: #2c2c2c;
+}
 
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-    }
+/* Typography */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-    }
+h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
 
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(to bottom, #f8e8e4, #faf7f5);
-    }
+/* Layout */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 20px;
+}
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
+/* HEADER (clean & premium) */
+.header {
+  background: #ffffff;
+  text-align: center;
+  padding: 18px 10px;
+  border-bottom: 1px solid #eee;
+}
 
-    .hero p {
-      font-size: 18px;
-      color: #666;
-    }
+.logo {
+  width: 170px;
+  max-width: 75%;
+  height: auto;
+}
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
+/* HERO (fixed spacing issue) */
+.hero {
+  text-align: center;
+  padding: 30px 20px 10px;
+  background: #faf7f5;
+}
 
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      text-align: center;
-      transition: 0.3s;
-    }
+.tagline {
+  font-size: 15px;
+  color: #8a8a8a;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+/* PRODUCTS GRID */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
 
-    .image {
-      height: 250px;
-      background: #eee;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
+/* CARD (more luxury feel) */
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  text-align: center;
+  transition: 0.3s;
+}
 
-    .price {
-      font-weight: 600;
-      margin: 10px 0;
-    }
+.card:hover {
+  transform: translateY(-6px);
+}
 
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      border-radius: 30px;
-      background-color: #c97b63;
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      margin-top: 10px;
-    }
+/* IMAGE */
+.image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
 
-    .btn:hover {
-      background-color: #a85f4a;
-    }
-
-    .footer {
-      text-align: center;
-      margin-top: 50px;
-      padding: 20px;
-      color: #777;
-      font-size: 14px;
-    }
-
-    .thumbs {
+/* THUMBNAILS */
+.thumbs {
   display: flex;
   gap: 8px;
-  margin-top: 10px;
+  margin-top: 8px;
   justify-content: center;
 }
 
 .thumbs img {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
   opacity: 0.7;
+  transition: 0.2s;
 }
 
 .thumbs img:hover {
   opacity: 1;
+  transform: scale(1.05);
 }
-    
+
+/* PRICE */
+.price {
+  font-weight: 600;
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 30px;
+  background-color: #c97b63;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #a85f4a;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 25px 20px;
+  color: #777;
+  font-size: 14px;
+  border-top: 1px solid #eee;
+}
+
+.footer-links {
+  margin-top: 12px;
+}
+
+.footer-links span {
+  margin: 0 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 13px;
+}
+
+.footer-links span:hover {
+  color: #c97b63;
+}
+
+/* POPUP */
 .popup {
   display: none;
   position: fixed;
@@ -131,53 +180,42 @@
 
 .popup img {
   max-width: 90%;
-  max-height: 90%;
+  max-height: 85%;
   border-radius: 12px;
 }
-    .close {
+
+/* CLOSE BUTTON */
+.close {
   position: absolute;
   top: 20px;
-  right: 30px;
-  font-size: 30px;
+  right: 25px;
+  font-size: 28px;
   color: white;
   cursor: pointer;
 }
 
+/* NAV ARROWS (FIXED FOR MOBILE) */
 .nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 30px;
+  font-size: 26px;
   color: white;
   cursor: pointer;
-  padding: 15px;
-  user-select: none;
-  background: rgba(0,0,0,0.4);
+  padding: 12px;
+  background: rgba(0,0,0,0.5);
   border-radius: 50%;
 }
 
 .left {
-  left: 20px;
+  left: 10px;
 }
 
 .right {
-  right: 20px;
+  right: 10px;
 }
 
-.footer-links {
-  margin-top: 10px;
-}
-
-.footer-links span {
-  margin: 0 10px;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.footer-links span:hover {
-  color: #c97b63;
-}
-
+/* POLICY POPUP */
 .policy-content {
   background: white;
   padding: 20px;
@@ -189,38 +227,36 @@
   text-align: left;
 }
 
-.logo {
-  width: 180px;
-  max-width: 70%;
-  height: auto;
-}
+/* MOBILE FIXES */
+@media (max-width: 600px) {
+  .logo {
+    width: 140px;
+  }
 
-.logo-small {
-  width: 140px;
-  max-width: 60%;
-  height: auto;
-}
+  .image {
+    height: 220px;
+  }
 
-.header {
-  text-align: center;
-  padding: 20px 10px;
-  background: white;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  .nav {
+    font-size: 22px;
+    padding: 10px;
+  }
 }
-
   </style>
 </head>
 
 <body>
+
+<!-- HEADER -->
 <div class="header">
   <img src="https://i.postimg.cc/MHvJ1gj3/79DC56A5-7746-4B4F-B302-CD40F19DA1AF.png" class="logo">
 </div>
-  <!-- HERO -->
-  <div class="hero">
-    
-    <p>Where tradition meets quite luxury ✨</p>
-  </div>
 
+<!-- HERO -->
+<div class="hero">
+  <p class="tagline">Where tradition meets quiet luxury ✨</p>
+</div>
+  
   <!-- PRODUCTS -->
   <div class="container">
     <h2 style="text-align:center;">Our Sarees</h2>
