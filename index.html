@@ -4,196 +4,156 @@
   <title>House of Ananda</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #faf7f5;
+      color: #2c2c2c;
+    }
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #faf7f5;
-  color: #2c2c2c;
-}
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
 
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-}
+    /* HERO */
+    .hero {
+      height: 70vh;
+      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                  url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1400') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 30px 20px;
-}
+    .logo {
+      width: 220px;
+      margin-bottom: 20px;
+      filter: brightness(0) invert(1);
+    }
 
-/* 🔥 PREMIUM HERO (FIXED) */
-.hero-premium {
-  height: 60vh;
-  min-height: 420px;
-  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-              url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1400') center/cover no-repeat;
+    .tagline {
+      color: white;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 30px 20px;
+    }
 
-.logo-hero {
-  width: 200px;
-  max-width: 80%;
-  margin-bottom: 20px;
-}
+    /* PRODUCTS */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
 
-.tagline {
-  color: white;
-  font-size: 18px;
-  letter-spacing: 1px;
-}
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      text-align: center;
+    }
 
-/* PRODUCTS */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
+    .image {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 14px;
+      cursor: pointer;
+    }
 
-.card {
-  background: white;
-  border-radius: 18px;
-  padding: 18px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  text-align: center;
-  transition: 0.3s;
-}
+    .price {
+      font-weight: 600;
+      margin: 10px 0;
+    }
 
-.card:hover {
-  transform: translateY(-6px);
-}
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background-color: #c97b63;
+      color: white;
+      text-decoration: none;
+    }
 
-.image {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 14px;
-  margin-bottom: 12px;
-}
+    /* POPUP */
+    .popup {
+      display: none;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      top: 0;
+      left: 0;
+      justify-content: center;
+      align-items: center;
+    }
 
-.thumbs {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-}
+    .popup img {
+      max-width: 90%;
+      max-height: 85%;
+    }
 
-.thumbs img {
-  width: 55px;
-  height: 55px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  opacity: 0.7;
-}
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
 
-.thumbs img:hover {
-  opacity: 1;
-}
+    .nav {
+      position: absolute;
+      top: 50%;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      background: rgba(0,0,0,0.4);
+      padding: 10px;
+      border-radius: 50%;
+    }
 
-.price {
-  font-weight: 600;
-  margin: 10px 0;
-}
+    .left { left: 15px; }
+    .right { right: 15px; }
 
-.btn {
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 30px;
-  background-color: #c97b63;
-  color: white;
-  text-decoration: none;
-}
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      border-top: 1px solid #eee;
+    }
 
-.btn:hover {
-  background-color: #a85f4a;
-}
+    .footer-links span {
+      margin: 0 10px;
+      cursor: pointer;
+      text-decoration: underline;
+    }
 
-/* FOOTER */
-.footer {
-  text-align: center;
-  margin-top: 60px;
-  padding: 25px;
-  border-top: 1px solid #eee;
-}
-
-.footer-links span {
-  margin: 0 10px;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-/* POPUP */
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.85);
-  justify-content: center;
-  align-items: center;
-}
-
-.popup img {
-  max-width: 90%;
-}
-
-.nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-}
-
-.left { left: 20px; }
-.right { right: 20px; }
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.policy-content {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 500px;
-}
-
-@media (max-width: 600px) {
-  .hero-premium {
-    height: 50vh;
-  }
-
-  .logo-hero {
-    width: 150px;
-  }
-}
-
+    .policy-content {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+    }
   </style>
 </head>
 
 <body>
 
-<!-- 🔥 HERO -->
-<div class="hero-premium">
-  <img src="YOUR-LOGO-LINK" class="logo-hero">
+<!-- HERO -->
+<div class="hero">
+  <img src="https://i.postimg.cc/MHvJ1gj3/79DC56A5-7746-4B4F-B302-CD40F19DA1AF.png" class="logo">
   <p class="tagline">Where tradition meets quiet luxury ✨</p>
 </div>
 
@@ -203,27 +163,13 @@ h1, h2, h3 {
 
   <div class="products">
 
-    <div class="card">
-
-      <img id="img1" 
-      src="https://i.ibb.co/mVFRRMPH/IMG-4703.jpg" 
-      class="image"
-      onclick="openPopup(this.src, images1)">
-
-      <div class="thumbs">
-        <img src="https://i.ibb.co/mVFRRMPH/IMG-4703.jpg" onclick="changeImage('img1', this.src)">
-        <img src="https://i.ibb.co/NdWKzZxp/IMG-4704.jpg" onclick="changeImage('img1', this.src)">
-        <img src="https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg" onclick="changeImage('img1', this.src)">
-      </div>
-
-      <h3>Royal Blue Elegance</h3>
-      <p class="price">₹4,999</p>
-
-      <a class="btn" href="https://wa.me/919633789718?text=Hi%20I%20want%20Royal%20Blue%20Elegance">
-        Order on WhatsApp
-      </a>
-
-    </div>
+    <!-- 6 CARDS -->
+    <div class="card"><img src="https://i.ibb.co/mVFRRMPH/IMG-4703.jpg" class="image" onclick="openPopup(0)"><h3>Royal Blue Elegance</h3><p class="price">₹4,999</p><a class="btn" href="#">Order</a></div>
+    <div class="card"><img src="https://i.ibb.co/NdWKzZxp/IMG-4704.jpg" class="image" onclick="openPopup(1)"><h3>Ivory Silk Classic</h3><p class="price">₹5,499</p><a class="btn" href="#">Order</a></div>
+    <div class="card"><img src="https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg" class="image" onclick="openPopup(2)"><h3>Pastel Cotton Breeze</h3><p class="price">₹2,499</p><a class="btn" href="#">Order</a></div>
+    <div class="card"><img src="https://i.ibb.co/mVFRRMPH/IMG-4703.jpg" class="image" onclick="openPopup(3)"><h3>Festive Red Zari</h3><p class="price">₹5,999</p><a class="btn" href="#">Order</a></div>
+    <div class="card"><img src="https://i.ibb.co/NdWKzZxp/IMG-4704.jpg" class="image" onclick="openPopup(4)"><h3>Golden Tissue Glow</h3><p class="price">₹6,499</p><a class="btn" href="#">Order</a></div>
+    <div class="card"><img src="https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg" class="image" onclick="openPopup(5)"><h3>Soft Pink Charm</h3><p class="price">₹3,999</p><a class="btn" href="#">Order</a></div>
 
   </div>
 </div>
@@ -231,52 +177,75 @@ h1, h2, h3 {
 <!-- FOOTER -->
 <div class="footer">
   <p>© 2026 House of Ananda</p>
+  <div class="footer-links">
+    <span onclick="openPolicy('tnc')">Terms</span>
+    <span onclick="openPolicy('returns')">Returns</span>
+    <span onclick="openPolicy('shipping')">Shipping</span>
+  </div>
 </div>
 
-<!-- POPUP -->
+<!-- IMAGE POPUP -->
 <div id="popup" class="popup">
   <span class="close" onclick="closePopup()">×</span>
-  <span class="nav left" onclick="prevImage()">❮</span>
+  <span class="nav left" onclick="prev()">❮</span>
   <img id="popupImg">
-  <span class="nav right" onclick="nextImage()">❯</span>
+  <span class="nav right" onclick="next()">❯</span>
+</div>
+
+<!-- POLICY POPUP -->
+<div id="policyPopup" class="popup" onclick="closePolicy()">
+  <div class="policy-content" onclick="event.stopPropagation()">
+    <span class="close" onclick="closePolicy()">×</span>
+    <div id="policyText"></div>
+  </div>
 </div>
 
 <script>
-
-let images1 = [
+let images = [
+  "https://i.ibb.co/mVFRRMPH/IMG-4703.jpg",
+  "https://i.ibb.co/NdWKzZxp/IMG-4704.jpg",
+  "https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg",
   "https://i.ibb.co/mVFRRMPH/IMG-4703.jpg",
   "https://i.ibb.co/NdWKzZxp/IMG-4704.jpg",
   "https://i.ibb.co/Y4FFJVr0/IMG-4705.jpg"
 ];
 
-let currentImages = [];
-let currentIndex = 0;
+let current = 0;
 
-function openPopup(src, images) {
-  currentImages = images;
-  currentIndex = images.indexOf(src);
+function openPopup(index) {
+  current = index;
   document.getElementById("popup").style.display = "flex";
-  document.getElementById("popupImg").src = src;
+  document.getElementById("popupImg").src = images[current];
 }
 
 function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
 
-function nextImage() {
-  currentIndex = (currentIndex + 1) % currentImages.length;
-  document.getElementById("popupImg").src = currentImages[currentIndex];
+function next() {
+  current = (current + 1) % images.length;
+  document.getElementById("popupImg").src = images[current];
 }
 
-function prevImage() {
-  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-  document.getElementById("popupImg").src = currentImages[currentIndex];
+function prev() {
+  current = (current - 1 + images.length) % images.length;
+  document.getElementById("popupImg").src = images[current];
 }
 
-function changeImage(id, src) {
-  document.getElementById(id).src = src;
+function openPolicy(type) {
+  let text = "";
+
+  if(type === "tnc") text = "<h2>Terms</h2><p>Orders once placed cannot be cancelled.</p>";
+  if(type === "returns") text = "<h2>Returns</h2><p>Only damaged items accepted within 48 hrs.</p>";
+  if(type === "shipping") text = "<h2>Shipping</h2><p>3–5 working days delivery.</p>";
+
+  document.getElementById("policyText").innerHTML = text;
+  document.getElementById("policyPopup").style.display = "flex";
 }
 
+function closePolicy() {
+  document.getElementById("policyPopup").style.display = "none";
+}
 </script>
 
 </body>
